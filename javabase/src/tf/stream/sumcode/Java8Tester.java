@@ -1,4 +1,4 @@
-package java.stream.sumcode;
+package tf.stream.sumcode;
 
 import java.util.*;
 import java.util.stream.Collectors;
