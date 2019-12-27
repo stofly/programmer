@@ -1,4 +1,4 @@
-package java.stream;
+package java.stream.sumcode;
 
 import java.util.*;
 import java.util.stream.Collectors;
