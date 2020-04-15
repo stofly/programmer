@@ -13,6 +13,7 @@
     <packaging>pom</packaging>
     <modules>
         <module>SpringBootCRedis</module>
+        <module>SpringBootCRedisXML</module>
     </modules>
 
 </project>
