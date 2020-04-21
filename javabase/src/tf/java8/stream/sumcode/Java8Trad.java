@@ -1,4 +1,4 @@
-package tf.stream.sumcode;
+package tf.java8.stream.sumcode;
 //java8特性-Stream
 
 import java.util.Arrays;

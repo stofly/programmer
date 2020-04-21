@@ -1,8 +1,7 @@
-package tf.stream.flatmap;
+package tf.java8.stream.flatmap;
 
 import tf.common.Date;
 import tf.common.PersonModel;
-import tf.stream.Map.StreamMap;
 
 import java.util.Arrays;
 import java.util.List;

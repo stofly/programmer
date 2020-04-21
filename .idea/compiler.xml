@@ -9,6 +9,7 @@
         <module name="SpringBootCRedis" />
         <module name="mysql" />
         <module name="SpringBootCRedisXML" />
+        <module name="utils" />
       </profile>
     </annotationProcessing>
   </component>

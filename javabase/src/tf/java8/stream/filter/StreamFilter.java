@@ -1,4 +1,4 @@
-package tf.stream.filter;
+package tf.java8.stream.filter;
 
 import tf.common.Date;
 import tf.common.PersonModel;

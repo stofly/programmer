@@ -1,4 +1,4 @@
-package tf.lamda;
+package tf.java8.lamda;
 
 import java.util.ArrayList;
 import java.util.List;

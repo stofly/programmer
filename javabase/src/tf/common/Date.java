@@ -3,6 +3,9 @@ package tf.common;
 import java.util.Arrays;
 import java.util.List;
 
+/**
+ * @author stf
+ */
 public class Date {
 
     private static List<PersonModel> personModelList = null;
@@ -18,7 +21,10 @@ public class Date {
         personModelList = Arrays.asList(personModel1, personModel2, personModel3, personModel4, personModel5);
     }
 
-    //数据源获取方法
+    /**
+     * 获取数据源
+     * @return
+     */
     public List<PersonModel> getPersonModelDate() {
         return personModelList;
     }
