@@ -14,6 +14,7 @@
     <modules>
         <module>SpringBootCRedis</module>
         <module>SpringBootCRedisXML</module>
+        <module>SprinBootCFastdfs</module>
     </modules>
 
 </project>

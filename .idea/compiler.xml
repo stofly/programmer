@@ -8,9 +8,13 @@
         <outputRelativeToContentRoot value="true" />
         <module name="SpringBootCRedis" />
         <module name="mysql" />
+        <module name="SprinBootCFastdfs" />
         <module name="SpringBootCRedisXML" />
         <module name="utils" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="utils" target="1.7" />
+    </bytecodeTargetLevel>
   </component>
 </project>

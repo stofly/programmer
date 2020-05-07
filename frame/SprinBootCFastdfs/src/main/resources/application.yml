@@ -1,0 +1,11 @@
+server:
+  port: 8001
+
+fdfs:
+  so-timeout: 1501
+  connect-timeout: 601
+  thumb-image:             #缩略图生成参数
+    width: 150
+    height: 150
+  web-server-url: 39.105.53.222/
+  tracker-list: 39.105.53.222:22122
