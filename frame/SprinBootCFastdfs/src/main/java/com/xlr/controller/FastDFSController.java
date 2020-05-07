@@ -9,6 +9,7 @@ package com.xlr.controller;
  * @version V1.0.0
  */
 
+import java.io.IOException;
 import java.net.URLEncoder;
 import java.util.HashMap;
 import java.util.Map;
@@ -25,7 +26,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 
 @RestController
-@RequestMapping("/fdfs")
+@RequestMapping("/operationFastDfs")
 public class FastDFSController {
 
     @Autowired
@@ -37,8 +38,8 @@ public class FastDFSController {
      * @return
      * @throws Exception
      */
-    @RequestMapping("/upload")
-    public Map<String,Object> upload(MultipartFile file) throws Exception{
+    @RequestMapping("/uploadFile")
+    public Map<String,Object> uploadFile(MultipartFile file) throws Exception{
 
         String url = fdfsClient.uploadFile(file);
 
@@ -46,7 +47,6 @@ public class FastDFSController {
         result.put("code", 200);
         result.put("msg", "上传成功");
         result.put("url", url);
-
         return result;
     }
 
@@ -56,16 +56,34 @@ public class FastDFSController {
      * @param response
      * @throws Exception
      */
-    @RequestMapping("/download")
-    public void  download(String fileUrl, HttpServletResponse response) throws Exception{
-
+    @RequestMapping("/downFile")
+    public void  downFile(String fileUrl,String fileName,HttpServletResponse response) throws Exception{
         byte[] data = fdfsClient.download(fileUrl);
-
+        response.setHeader("Content-disposition", "attachment;filename=" + URLEncoder.encode(fileName+"zip", "UTF-8"));
         response.setCharacterEncoding("UTF-8");
-        response.setHeader("Content-disposition", "attachment;filename=" + URLEncoder.encode("test.jpg", "UTF-8"));
+        ServletOutputStream outputStream = null;
+        try {
+            outputStream = response.getOutputStream();
+            outputStream.write(data);
+        } catch (IOException e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                outputStream.flush();
+                outputStream.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+    }
 
-        // 写出
-        ServletOutputStream outputStream = response.getOutputStream();
-        IOUtils.write(data, outputStream);
+    /**
+     * 文件删除
+     * @param fileUrl
+     * @throws Exception
+     */
+    @RequestMapping("/deleteFile")
+    public void  deleteFile(String fileUrl) throws Exception{
+        fdfsClient.deleteFile(fileUrl);
     }
 }

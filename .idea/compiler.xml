@@ -8,8 +8,8 @@
         <outputRelativeToContentRoot value="true" />
         <module name="SpringBootCRedis" />
         <module name="mysql" />
-        <module name="SprinBootCFastdfs" />
         <module name="SpringBootCRedisXML" />
+        <module name="SprinBootCFastdfs" />
         <module name="utils" />
       </profile>
     </annotationProcessing>
